@@ -1,0 +1,174 @@
+<ion-view >
+	<ion-nav-bar class="myHeader" align-title="center">
+		<ion-nav-back-button class="button-clear" style="color: white;">
+			<i class="icon ion-arrow-left-c"></i>
+		</ion-nav-back-button>
+
+<!--		<ion-nav-buttons side="left">
+</ion-nav-buttons>-->
+
+
+	<!--		<ion-nav-buttons side="right">
+</ion-nav-buttons>-->
+
+</ion-nav-bar>  
+
+<ion-content scroll="false" class="gray-background">
+	<div style="text-align: center;">
+		<div ng-click="calculatorClick();">
+			<img  ng-src="{{options.imgCalculator}}" class="icon-size">	
+			<p ng-class="options.calculatorClass">{{'Calculator' | translate}}</p>	
+		</div>
+		<!--<div class="col col-33"  ng-click="aboutClick();">
+			<img ng-src="{{options.imgAbout}}" class="icon-size">
+			<p ng-class="options.aboutClass">{{'About' | translate}}</p>
+		</div>-->
+	</div>
+	<div class="home-slider-header">
+		<font size="2" class="home-slider-header-font">{{'Do_the_Math' | translate}}</font>
+	</div>
+	
+	<!--<ion-slide-box slider="data.slider" pager-click="pagerClick(index)" class="home-slider-style" on-slide-changed="slideHasChanged($index)">
+		<ion-slide >
+			<ion-content class="home-slider-content">-->
+			<div class="home-slider-content">
+				<div class="row " class="home-row-input">
+					<div class="col col-50 home-col-select" >
+						<!--<p>
+							<div class="home-flag-position-gbp" ng-class="moedaOrigem.flag"></div>
+						</p>-->
+				<div class="col col-10 home-flag-position-gbp" ng-class="flagori" style="float:left; margin-top: 0px;"></div>
+				<div class="col col-90 custom-input-cont" style="max-width: 100%; margin-left: -5px; clear:both;">
+				<input id="demo-non-form1" ng-model="sel" mobiscroll-data="myData" mobiscroll-select="selectOptions1" />
+				</div>
+					</div>
+				<div class="espacamento-horizontal"></div>
+					<label class="item item-input item-stacked-label home-label-valor">
+					  <span class="input-label" style="margin-top:-15px !important;">
+						<font size="2"  class="home-input-label-font">{{'You_send' | translate}}</font>
+					  </span>
+					  <input class="home-valor-label-font" type="text" ng-model="valor" ng-model-options='{ debounce: 350 }' ng-change="moedaInputChange(valor);" ui-number-mask>
+					</label>
+				</div>
+				<div ></div>
+				<div class="row home-row-input" >
+					<div class="col col-50 home-col-select" >
+				<div class="col col-10 home-flag-position" ng-class="flagdes" style="float:left; margin-top: 0px;"></div>
+				<div class="col col-90 custom-input-cont" style="max-width: 100%; margin-left: -5px; margin-top:-3px !important; clear:both;">
+				<input id="demo-non-form2" ng-model="sel2" mobiscroll-data="myData2" mobiscroll-select="selectOptions2"/>
+				</div>
+
+					</div>
+				<div class="espacamento-horizontal"></div>
+				<label class="item item-input item-stacked-label home-label-valor">
+					<span class="input-label"  style="margin-top:-15px !important;">
+						<font size="2" class="home-input-label-font">{{'Beneficiary_receives' | translate}}</font>
+					</span>
+					<!--<div class="home-valor-dest" style="margin-top:-1px !important;">-->
+					<input class="home-valor-label-font" type="text" ng-model="valorDestino" ng-model-options='{ debounce: 350 }' ng-change="moedaOutputChange(valor);" ui-number-mask>
+						
+					<!--</div>-->
+				</label>
+			</div>
+			<div class="row" style="position:relative;top: 2%;">
+				<div class="col">
+					<font size="2"  class="home-detail-font">
+						{{'Rate' | translate}}: {{rate }}
+					</font>
+				</div>
+				<div class="col">
+					<font size="2" class="home-detail-font">
+						{{'Fee' | translate}}: {{fee }}
+					</font>
+				</div>
+			</div>
+
+			<div class="row home-text" style="text-align: center !important;">
+				<div class="col col-90 col-offset-5">
+					<font size="4" class="home-text-style-1">
+						
+					</font>
+				</div>
+			</div>
+			<div class="row home-text" style="text-align: center !important;">
+				<div class="col col-90 col-offset-5">
+					<font size="4" class="home-text-style-1">
+						{{'Message1' | translate}}!
+					</font>
+				</div>
+			</div>
+			<div class="row home-text" style="text-align: center !important;">
+				<div class="col col-90 col-offset-5">
+				<font size="3" class="home-text-style-2">
+					{{'Message2' | translate}}
+					{{'Message3' | translate}}
+				</font>
+				<p>
+					<font size="3" class="home-text-style-1">
+						WES-Transfer {{'Message4' | translate}}
+					</font>
+				</p>
+	<p>
+		<a id="link" style="cursor:pointer;text-decoration:underline;" ng-click="popup.show()">Terms and conditions</a>
+	</p>
+				</div>
+			</div>
+
+			</div>
+	<!--	</ion-content>
+	</ion-slide>
+	<ion-slide >
+		<ion-content class="has-footer">
+			<div style="text-align: center;">
+				<font size="3" class="home-text-style-2">
+					<p>{{'Message5' | translate}} WES-Transfer</p>
+				</font>
+
+
+				<font size="4" class="home-text-style-1">
+					<p>WES-Transfer {{'Message6' | translate}} </p>
+					<p> {{'payment_services' | translate}}. </p>
+				</font>
+
+
+				<font size="3" class="home-text-style-2">
+					<p>
+						{{'Message7' | translate}}, 
+						WES-Transfer {{'Message8' | translate}}.
+					</p>
+					<p>
+						{{'Message9' | translate}}.
+					</p>
+					<p>
+						{{'Message10' | translate}}.
+					</p>
+					<p>
+						{{'Message11' | translate}}.
+					</p>
+					<p>
+						WES-Transfer {{'Message12' | translate}}.
+					</p>
+				</font>				
+			</div>
+		</ion-content>
+	</ion-slide>
+</ion-slide-box>-->
+
+</ion-content>
+<ion-footer-bar  class="bar myFooter">
+	<a class="buttons">
+		<button class="button button-rm" ng-click="goLogin();">{{'Login' | translate}}</button>
+	</a>
+	<h1 class="title"></h1>
+	<a class="buttons" >
+		<button class="button button-rm" ng-click="goRegister('1');">{{'Register' | translate}}</button>
+	</a>
+    <div ng-model="mypopup" mobiscroll-popup="settingspopup" mobiscroll-instance="popup" style="display:none">
+        <div class="mbsc-align-center mbsc-padding">
+            <!--<img src="https://img.mobiscroll.com/demos/f1.png">-->
+            <h3>Terms and conditions</h3>
+            <p><span style="font-size: small;">World Eye Solutions, the Company shall receive from the customer the total amount in Pounds , to be transferred and the corresponding customer fee (s) charged by the Company plus all the pertinent information required to execute the remittance according to the Company\'s polices. Failure of the customer to follow the procedures, entitles the Company at its sole discretion and any time, to refuse any transfer request. The Company shall comply with all applicable laws and regulations applicable to the operation of its business. The transfer of funds will be handled by banks and independent firms, which are not related to the Company. The Company agrees to use reasonable judgment and care in the handling and selection of the banks and companies involved in the remittance transaction. The Company shall be hold harmless from all claim, demands, action, suits, proceedings and judgments, including cost and reasonable attorney\'s fees against the Company resulting from this transaction, whether done negligently or intentionality by costumer and the unrelated companies and banks involved in the transaction. The Company shall not be held responsible neither liable for any delay, error or failure of payment to the beneficiary or recipient or this transaction by the receiving entity. THE ORDER WILL NOT BE PROCESSED WITHOUT PROPER IDENTIFICATION.</span></p>
+        </div>
+    </div>
+</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,55 @@
+<ion-view  class="gray-background" title="Login">
+  <!--<ion-nav-bar class="hide">
+  </ion-nav-bar>  
+  <ion-content class="login_page padding gray-background">
+    <div class="logo">
+      <img src="img/LogoWESTransfer1.png" />
+    </div>
+    <h3>Login</h3>-->
+<ion-header-bar class="bar-stable myHeader">
+      <ion-nav-back-button class="button-clear" style="color: white;">
+       <i class="icon ion-arrow-left-c"></i>
+    </ion-nav-back-button>
+      <ion-title>
+      Login
+      </ion-title>
+  </ion-header-bar>
+  <!--<ion-content class="login_page padding gray-background">-->
+  <ion-content class="gray-background login_page register_page padding">
+    
+    <form name="formulario" class="md-signup-rules" mobiscroll-form="settings" ng-submit="login();">
+    <div class="mbsc-form-group-inset">
+		<label ng-class="{ 'mbsc-err': formulario.email.$invalid && (form.$submitted || formulario.email.$touched) }">
+			<input name="email" type="email" placeholder="Email" ng-model="usuario.login" required data-icon="ion-ios7-email">
+			<span class="mbsc-err-msg" ng-show="formulario.email.$error.required && (formulario.$submitted || formulario.email.$touched)">Tell us your email.</span>
+			<span class="mbsc-err-msg" ng-show="formulario.email.$error.email && (formulario.$submitted || formulario.email.$touched)">This is not a valid email.</span>
+	
+		</label>
+
+		<label ng-class="{ 'mbsc-err': formulario.password.$invalid && (formulario.$submitted || formulario.password.$touched) }">
+			<input name="password" type="password" placeholder="Password" minlength="6" ng-model="usuario.senha" required data-icon="lock2" data-password-toggle="true">
+			<span class="mbsc-err-msg" ng-show="formulario.password.$error.required && (formulario.$submitted || formulario.password.$touched)">Choose a password.</span>
+	
+		</label>
+
+      <span ng-show = "formulario.$submitted && mensagem.length" class="mbsc-err-msg">
+        {{mensagem}}
+      </span>
+	</div>
+ 	<div class="mbsc-form-group-inset mbsc-padding mbsc-align-center">
+		<button class="mbsc-btn-outline mbsc-btn-block" type="submit">Login</button>
+		<button class="mbsc-btn-outline mbsc-btn-block" type="button" ng-click="goRegister('1');">Register</button>
+		<button class="mbsc-btn-flat mbsc-btn-block" type="button" style="font-size:0.75em !important;font-weight:600;" ng-click="goRecover();">Forgot your password?</button>
+		<button class="mbsc-btn-flat mbsc-btn-block" type="button" style="font-size:0.75em !important;font-weight:600;" ng-click="goActacc('','');">Activate your account</button>
+		<!--<a href="#" class="md-signup" ng-click="goRegister('1');">Don't have an account yet? Register</a>
+		<br><br>
+		<a href="#" class="md-login" ng-click="goRecover();">Forgot your password?</a>-->
+	</div>
+    
+  <a ng-click="myGoBack();" class="button button-block button-calm button-outline back_btn icon-left ion-arrow-left-c">
+    Back
+  </a>
+  </form>
+</ion-content>
+
+</ion-view>

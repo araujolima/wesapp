@@ -1,0 +1,77 @@
+<ion-view >
+  <ion-nav-bar class="bar myHeader" align-title="center">
+  
+  </ion-nav-bar> 
+  
+  <ion-content class="gray-background">
+    <div class="home-slider-content">
+      <div class="row home-row-input">
+        <div class="col col-50 home-col-select">
+			<!--<p>-->
+				<!--<div class="home-flag-position-gbp" ng-class="moedaOrigem.flag"></div>-->
+			<!--</p>-->
+				<div class="col col-10 home-flag-position-gbp" ng-class="flagori" style="float:left; margin-top: 0px;"></div>
+				<div class="col col-90 custom-input-cont" style="max-width: 100%; margin-left: -5px; clear:both;">
+				<input id="demo-non-form1" ng-model="sel" mobiscroll-data="myData" mobiscroll-select="selectOptions1" />
+				</div>
+        </div>
+        <div class="espacamento-horizontal"></div>
+        <label class="item item-input item-stacked-label home-label-valor">
+          <span class="input-label" style="margin-top:-15px !important;">
+            <font size="2"  class="home-input-label-font">{{'You_send' | translate}}</font>
+          </span>
+          <input class="home-valor-label-font" type="text" ng-model="valor" ng-model-options='{ debounce: 350 }' ng-change="moedaInputChange(valor);" ui-number-mask>
+        </label>
+      </div>
+      <div ></div>
+      <div class="row home-row-input" >
+        <div class="col col-50 home-col-select" >
+				<div class="col col-10 home-flag-position" ng-class="flagdes" style="float:left; margin-top: 0px;"></div>
+				<div class="col col-90 custom-input-cont" style="max-width: 100%; margin-left: -5px; clear:both;">
+				<input id="demo-non-form2" ng-model="sel2" mobiscroll-data="myData2" mobiscroll-select="selectOptions2"/>
+				</div>
+
+      </div>
+      <div class="espacamento-horizontal"></div>
+      <label class="item item-input item-stacked-label home-label-valor">
+        <span class="input-label" style="margin-top:-15px !important;">
+          <font size="2" class="home-input-label-font">{{'Beneficiary_receives' | translate}}</font>
+        </span>
+		<!--<div class="home-valor-dest">-->
+          <input class="home-valor-label-font" type="text" ng-model="valorDestino" ng-model-options='{ debounce: 350 }' ng-change="moedaOutputChange(valor);" ui-number-mask>
+        <!--</div>-->
+      </label>
+    </div>
+		<div class="row" style="position:relative !important;top: 4% !important;">
+      <div class="col">
+        <font size="2"  class="home-detail-font">
+          {{'Rate' | translate}}: {{rate }}<!-- {{ curpairdest }} -->
+        </font>
+      </div>
+      <div class="col">
+        <font size="2" class="home-detail-font">
+          {{'Fee' | translate}}: {{fee }}
+        </font>
+      </div>
+    </div>
+
+  </div>
+  <button type="button" class="button button-positive button-outline reg_btn col-50 col-offset-25 button-block" style="top:20px;" ng-click="goHomeBenefi(moedaDestino,valor,valorDestino,fee,rate,curpairdest,ctrycode);">
+    {{'Send' | translate}}
+  </button>
+<!-- mobiscroll -->
+<br><br>
+<!--<div ng-app="app" ng-controller="HomeController">-->
+    <div class="demo-container">
+		<!--<div class="col col-10 home-flag-position-gbp" ng-class="flagori" style="float:left; margin-top: 20px;"></div>-->
+        <!--<label for="demo-non-form">Select</label>-->
+    </div>
+    <div>
+        <!--<label for="demo-non-form">Select</label>-->
+    </div>
+<!--</div>-->
+<!-- mobiscroll -->
+
+
+</ion-content>
+</ion-view>
